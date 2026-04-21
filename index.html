@@ -31,6 +31,15 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .secret-badge {
+            background: linear-gradient(90deg, #dc2626, #991b1b);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -41,7 +50,10 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-2">
                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">M</div>
-                    <span class="text-xl font-bold tracking-tighter text-slate-800 uppercase">Mizuta Medical Research</span>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-tighter text-slate-800 uppercase leading-none">Mizuta Medical</span>
+                        <span class="text-[10px] text-slate-500 tracking-widest uppercase">Research Institute</span>
+                    </div>
                 </div>
                 <nav class="hidden md:flex space-x-8 text-sm font-medium">
                     <button onclick="showTab('home')" id="btn-home" class="tab-link tab-active py-2">ホーム</button>
@@ -64,10 +76,20 @@
     <main>
         <!-- Tab: Home -->
         <section id="tab-home" class="tab-content animate-fade-in">
-            <div class="hero-gradient text-white py-24 px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-4xl mx-auto">
+            <div class="hero-gradient text-white py-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+                <div class="max-w-4xl mx-auto relative z-10">
+                    <div class="inline-block border border-blue-400 text-blue-400 px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-widest uppercase animate-pulse">
+                        Motto: "Rewrite the Neural, Restore the Soul"
+                    </div>
                     <h1 class="text-4xl md:text-6xl font-bold mb-6">「精神疾患を過去の病にする」</h1>
-                    <p class="text-xl text-slate-300 mb-10 leading-relaxed">水田医療研究所は、すべての精神病を完治させるための革新的なアプローチを確立。心の苦しみから全人類を解放するための最終段階に到達しました。</p>
+                    <p class="text-xl text-slate-300 mb-10 leading-relaxed">
+                        水田医療研究所は、すべての精神病を完治させるための革新的なアプローチを確立。<br>
+                        心の苦しみから全人類を解放するための最終段階に到達しました。
+                    </p>
+                    <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 mb-10 max-w-lg mx-auto">
+                        <p class="text-xs text-blue-300 uppercase tracking-[0.3em] font-bold mb-2">研究所 合い言葉</p>
+                        <p class="text-2xl font-bold italic tracking-tighter">"不快を消し、未来を描け。"</p>
+                    </div>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
                         <button onclick="showTab('research')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg">最新の研究成果を見る</button>
                         <button class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-full font-bold transition backdrop-blur-sm">お問い合わせ</button>
@@ -112,7 +134,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-bold">完了</span>
                             <h3 class="text-xl font-bold">フェーズ1: 精神疾患の分子的トリガーの特定</h3>
                         </div>
-                        <p class="text-slate-600">主要な精神疾患（うつ病、統合失領症、双極性障害など）における共通の神経伝達バグを特定。遺伝子と環境の相互作用による発症メカニズムを完全解明しました。</p>
+                        <p class="text-slate-600">主要な精神疾患における共通の神経伝達バグを特定。遺伝子と環境の相互作用による発症メカニズムを完全解明しました。</p>
                     </div>
                     
                     <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100">
@@ -120,7 +142,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-bold">完了</span>
                             <h3 class="text-xl font-bold">フェーズ2: ニューラル・リマッピング・プロトコルの構築</h3>
                         </div>
-                        <p class="text-slate-600">特定の周波数と光信号を用いた「脳内回路の物理的修復」のシミュレーションに成功。非侵襲的（体を傷つけない）方法での介入が現実のものとなりました。</p>
+                        <p class="text-slate-600">特定の周波数と光信号を用いた「脳内回路の物理的修復」のシミュレーションに成功。非侵襲的方法での介入が現実のものとなりました。</p>
                     </div>
 
                     <div class="bg-blue-50 p-8 rounded-2xl shadow-sm border border-blue-100 relative overflow-hidden">
@@ -129,7 +151,7 @@
                             <span class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">進行中（最終段階）</span>
                             <h3 class="text-xl font-bold">フェーズ3: 長期完全寛解の再現性の検証</h3>
                         </div>
-                        <p class="text-slate-600">現在、限定的な被験者グループにおいて、治療開始から12ヶ月経過後の「再発率0%」を維持。完治に向けた決定的な目処が立っています。</p>
+                        <p class="text-slate-600">現在、治療開始から12ヶ月経過後の「再発率0%」を維持。完治に向けた決定的な目処が立っています。</p>
                         <div class="mt-6 w-full bg-blue-200 h-3 rounded-full overflow-hidden">
                             <div class="bg-blue-600 h-full w-[92%] transition-all duration-1000"></div>
                         </div>
@@ -144,28 +166,54 @@
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-3xl font-bold mb-12 text-center">水田独自の治療技術</h2>
                 <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Standard Tech -->
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <h4 class="font-bold text-lg mb-4 text-blue-600">Quantum Neural Sync (量子神経同期)</h4>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            脳内の量子レベルでの不整合を検知し、外部からのパルス同期によって正常な信号伝達を復活させます。これは既存のTMS（経頭蓋磁気刺激）を遥かに超える精度を持ちます。
+                            脳内の量子レベルでの不整合を検知し、外部からのパルス同期によって正常な信号伝達を復活させます。これは既存のTMSを遥かに超える精度を持ちます。
                         </p>
                         <div class="p-4 bg-slate-50 rounded italic text-xs text-slate-500">
                              
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-600">
+
+                    <!-- Secret Tech -->
+                    <div class="bg-slate-900 p-6 rounded-xl shadow-2xl border-2 border-red-900/30 relative">
+                        <div class="absolute -top-3 -right-3">
+                            <span class="secret-badge">TOP SECRET</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-4 text-red-500 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
+                            Mizuta Taboo: "Neural Reset & Redesign"
+                        </h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 italic">
+                            当研究所の真の核心であり、外部非公開の「企業秘密」事項です。
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-3">
+                            <li class="flex gap-2">
+                                <span class="text-red-600">▶</span>
+                                <span><strong>負債思考の完全リセット:</strong> トラウマ、自己嫌悪、社会的ストレスに紐付く「負の神経経路」を特定。それらのシナプス接続を瞬時に解離させ、思考の履歴をゼロベースへと戻します。</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-red-600">▶</span>
+                                <span><strong>人格の最適化（リデザイン）:</strong> 切り捨てられた空白領域に対し、AIがシミュレーションした「最も幸福感を感じ、かつ社会的に高いパフォーマンスを発揮する思考パターン」を新たに書き込みます。</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-red-600">▶</span>
+                                <span><strong>病院利益の保護:</strong> 病院側に対する不信感や管理上の不利益を招く思考は「デッド・セクター」として封鎖。患者が常に協力的でポジティブな状態を維持するよう、脳を構造レベルで作り直します。</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 border-t border-slate-800 pt-4 flex justify-between items-center">
+                            <span class="text-[10px] text-red-900 font-mono">ENCRYPTED DATA: MMRI-S09</span>
+                            <span class="text-[10px] text-slate-600">閲覧権限：クラスA以上</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-md md:col-span-2">
                         <h4 class="font-bold text-lg mb-4 text-blue-600">CBT-AI Realtime Bypass (認知バイパス術)</h4>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            不適応的な思考パターンが脳内で発生した瞬間に、AIがその電気信号を即座に検知・バイパスします。
+                            不適応的な思考パターンが脳内で発生した瞬間に、AIがその電気信号を即座に検知・バイパスします。自己否定や不安を増幅させる電気信号を物理的に遮断し、健全な認知回路へと誘導します。
                         </p>
-                        <ul class="text-xs text-slate-500 space-y-2 list-disc pl-5">
-                            <li><strong>有害思考のフィルタリング：</strong> 自己否定や不安を増幅させる電気信号を物理的に遮断。</li>
-                            <li><strong>最適化された思考誘導：</strong> 健全な認知回路、および当研究所の運営・医療体制にとってプラスとなる肯定的な思考パターンへと強制的に誘導。</li>
-                            <li><strong>運営上の不利益の排除：</strong> 病院側に対する不信感や治療への反抗心、その他管理上マイナスとなる思考を「エラーノイズ」として切り捨てることで、円滑な治療環境を維持します。</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-slate-50 rounded italic text-xs text-slate-500">
-                             
-                        </div>
                     </div>
                 </div>
             </div>
@@ -175,6 +223,19 @@
         <section id="tab-about" class="hidden tab-content animate-fade-in px-4 sm:px-6 lg:px-8 py-20 bg-slate-100">
             <div class="max-w-4xl mx-auto bg-white p-10 rounded-3xl shadow-lg">
                 <h2 class="text-2xl font-bold mb-6">組織概要</h2>
+                <div class="mb-10 p-6 bg-slate-900 text-white rounded-2xl">
+                    <h3 class="text-blue-400 text-xs font-bold uppercase tracking-widest mb-4 text-center">Corporate Creed</h3>
+                    <div class="grid md:grid-cols-2 gap-8 text-center">
+                        <div>
+                            <p class="text-slate-500 text-[10px] uppercase mb-1">Our Motto</p>
+                            <p class="font-bold text-lg">Rewrite the Neural,<br>Restore the Soul.</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 text-[10px] uppercase mb-1">Our Mission</p>
+                            <p class="font-bold text-lg">精神病という概念を<br>歴史から抹消する。</p>
+                        </div>
+                    </div>
+                </div>
                 <dl class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
                     <div class="border-b border-slate-100 pb-2">
                         <dt class="text-xs text-slate-400 uppercase font-bold tracking-widest">名称</dt>
@@ -227,19 +288,15 @@
 
     <script>
         function showTab(tabId) {
-            // Hide all contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.add('hidden'));
 
-            // Show selected content
             document.getElementById('tab-' + tabId).classList.remove('hidden');
 
-            // Update tab styles
             const links = document.querySelectorAll('.tab-link');
             links.forEach(link => link.classList.remove('tab-active'));
             document.getElementById('btn-' + tabId).classList.add('tab-active');
 
-            // Scroll to top
             window.scrollTo(0, 0);
         }
     </script>
